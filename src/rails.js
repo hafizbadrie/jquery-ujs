@@ -121,16 +121,16 @@
           method = element.data('method');
           url = element.data('url');
           data = element.serialize();
-          if (element.data('params')) data = data + "&" + element.data('params');
+          if (element.attr('data-params')) data = data + "&" + element.attr('data-params');
         } else if (element.is(rails.buttonClickSelector)) {
           method = element.data('method') || 'get';
           url = element.data('url');
           data = element.serialize();
-          if (element.data('params')) data = data + "&" + element.data('params');
+          if (element.attr('data-params')) data = data + "&" + element.attr('data-params');
         } else {
           method = element.data('method');
           url = rails.href(element);
-          data = element.data('params') || null;
+          data = element.attr('data-params') || null;
         }
 
         options = {
